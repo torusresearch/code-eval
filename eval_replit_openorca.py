@@ -4,7 +4,7 @@ from transformers import (
     PreTrainedModel,
     PreTrainedTokenizer,
 )
-from core import run_eval, filter_code
+from core import run_eval, filter_code, replit_orca_prompt
 import os
 import torch
 
@@ -17,7 +17,8 @@ TOKEN = True
 def generate_batch_completion(
     model: PreTrainedModel, tokenizer: PreTrainedTokenizer, prompt, batch_size
 ) -> list[str]:
-    input_batch = [prompt for _ in range(batch_size)]
+    prompt_input = replit_orca_prompt(prompt)
+    input_batch = [prompt_input for _ in range(batch_size)]
     inputs = tokenizer(input_batch, return_tensors="pt").to(model.device)
     input_ids_cutoff = inputs.input_ids.size(dim=1)
 

@@ -8,3 +8,6 @@ def standard_prompt(prompt: str) -> str:
 
 def replit_glaive_prompt(prompt: str) -> str:
     return f"""Below is an instruction that describes a task, paired with an input that provides further context.\n Write a response that appropriately completes the request.\n\n ### Instruction:\nWrite a program to perform the given task.\n\n Input:\n{prompt}\n\n### Response:"""
+
+def replit_orca_prompt(prompt: str) -> str:
+    return f"""You are an assistant that solves programming tasks.\nComplete the following code snippet:\n{prompt}\n"""
