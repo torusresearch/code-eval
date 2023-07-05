@@ -35,7 +35,6 @@ def check_correctness(problem: Dict, completion: str, timeout: float,
             reliability_guard()
 
             # Construct the check program and run it.
-            print(completion)
             check_program = (
                 problem["prompt"] + completion + "\n" +
                 problem["test"] + "\n" +
@@ -69,6 +68,9 @@ def check_correctness(problem: Dict, completion: str, timeout: float,
 
     if not result:
         result.append("timed out")
+
+    if result[0] == "passed":
+        print((problem["prompt"] + completion).strip())
 
     return dict(
         task_id=problem["task_id"],
