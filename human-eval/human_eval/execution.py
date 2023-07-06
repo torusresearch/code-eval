@@ -69,8 +69,9 @@ def check_correctness(problem: Dict, completion: str, timeout: float,
     if not result:
         result.append("timed out")
 
-    if result[0] == "passed":
-        print((problem["prompt"] + completion).strip())
+    task_id = problem["task_id"]
+    print(f"\n\nProblem{task_id}: {result[0]}")
+    print((problem["prompt"] + completion).strip())
 
     return dict(
         task_id=problem["task_id"],
