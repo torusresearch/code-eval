@@ -10,7 +10,7 @@ import torch
 
 # TODO: move to python-dotenv
 # add hugging face access token here
-TOKEN = True
+TOKEN = ""
 
 
 @torch.inference_mode()

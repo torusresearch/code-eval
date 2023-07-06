@@ -10,7 +10,7 @@ import torch
 
 # TODO: move to python-dotenv
 # add hugging face access token here
-TOKEN = True
+TOKEN = ""
 
 
 @torch.inference_mode()
@@ -48,7 +48,7 @@ if __name__ == "__main__":
     out_path = "results/replit_leetcode/eval.jsonl"
     os.makedirs("results/replit_leetcode", exist_ok=True)
     
-    model_name_or_path = "/home/matthias/src/replit-finetune/llm/leetcode_eval/hf"
+    model_name_or_path = "matorus/replit-leetcode"
 
     tokenizer = AutoTokenizer.from_pretrained(
         model_name_or_path,
