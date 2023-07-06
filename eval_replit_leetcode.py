@@ -44,7 +44,7 @@ def generate_batch_completion(
 
 if __name__ == "__main__":
     # adjust for n = 10 etc
-    num_samples_per_task = 1
+    num_samples_per_task = 10
     out_path = "results/replit_leetcode/eval.jsonl"
     os.makedirs("results/replit_leetcode", exist_ok=True)
     
