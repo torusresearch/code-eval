@@ -11,3 +11,6 @@ def replit_glaive_prompt(prompt: str) -> str:
 
 def replit_orca_prompt(prompt: str) -> str:
     return f"""You are an assistant that solves programming tasks.\nComplete the following code snippet:\n{prompt}\n"""
+
+def replit_leetcode_prompt(prompt: str) -> str:
+    return prompt
