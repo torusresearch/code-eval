@@ -4,7 +4,7 @@ from transformers import (
     PreTrainedModel,
     PreTrainedTokenizer,
 )
-from core import run_eval, filter_code, replit_orca_prompt
+from core import run_eval, instruct_prompt
 import os
 import torch
 
@@ -17,7 +17,7 @@ TOKEN = ""
 def generate_batch_completion(
     model: PreTrainedModel, tokenizer: PreTrainedTokenizer, prompt, batch_size
 ) -> list[str]:
-    prompt_input = replit_orca_prompt(prompt)
+    prompt_input = instruct_prompt(prompt)
     input_batch = [prompt_input for _ in range(batch_size)]
     inputs = tokenizer(input_batch, return_tensors="pt").to(model.device)
     input_ids_cutoff = inputs.input_ids.size(dim=1)
@@ -39,24 +39,26 @@ def generate_batch_completion(
         clean_up_tokenization_spaces=False,
     )
 
-    return [filter_code(completion) for completion in batch_completions]
+    return batch_completions
 
 
 if __name__ == "__main__":
     # adjust for n = 10 etc
     num_samples_per_task = 10
-    out_path = "results/replit_openorca/eval.jsonl"
-    os.makedirs("results/replit_openorca", exist_ok=True)
+    out_path = "results/replit_leetcode_prompt/eval.jsonl"
+    os.makedirs("results/replit_leetcode_prompt", exist_ok=True)
+    
+    model_name_or_path = "/home/matthias/src/replit-finetune/llm/leetcode_prompt/hf"
 
     tokenizer = AutoTokenizer.from_pretrained(
-        "matorus/replit-openorca",
+        model_name_or_path,
         trust_remote_code=True,
         use_auth_token=TOKEN,
     )
 
     model = torch.compile(
         AutoModelForCausalLM.from_pretrained(
-            "matorus/replit-openorca",
+            model_name_or_path,
             torch_dtype=torch.bfloat16,
             trust_remote_code=True,
             use_auth_token=TOKEN,
