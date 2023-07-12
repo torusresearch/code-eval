@@ -8,23 +8,23 @@ This is a repo I use to run human-eval on code models, adjust as needed. Some sc
 
 Table is sorted by pass@1 score.
  
-| model                                                                                                 | size | pass@1  | pass@10 | screenshot                                                                                                         |
-| ----------------------------------------------------------------------------------------------------- | ---- | ------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
-| [sahil2801/replit-code-instruct-glaive](https://huggingface.co/sahil2801/replit-code-instruct-glaive) | 3B   | 63.5%   | 67%     | ![instruct-glaive](https://github.com/abacaj/code-eval/assets/7272343/6fd7527d-0dc4-4b48-8a57-ad0373074bc5)        |
-| [WizardCoder-15B-V1.0](https://huggingface.co/WizardLM/WizardCoder-15B-V1.0)                          | 15B  | 57%     | 68.9%   | ![wizardcoder](https://github.com/abacaj/code-eval/assets/7272343/0b941ff8-b474-4236-bbc0-89d925bbd34e)            |
-| [bigcode/starcoder](https://huggingface.co/bigcode/starcoder)                                         | 15B  | 34.6%   | 48.7%   | ![starcoder](https://github.com/abacaj/code-eval/assets/7272343/eb5df978-f56b-4557-a433-8b8fa863a059)              |
-| [matorus/replit-coder-v2](https://huggingface.co/matorus/replit-coder-v2)                             | 3B   | 28.7%   | 43.3%   | [eval.out](./results/replit_coder_v2/eval.out) |
-| [openchat/opencoderplus](https://huggingface.co/openchat/opencoderplus)                               | 15B  | 27.3%   | 43.9%   | ![opencoder](https://github.com/abacaj/code-eval/assets/7272343/1fa9f5ef-941b-4ea8-981e-c3f258c03fee)              |
-| [teknium/Replit-v1-CodeInstruct-3B](https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B)         | 3B   | 25.8%   | 42.6%   | ![replit-codeinstruct-v1](https://github.com/abacaj/code-eval/assets/7272343/4fca98d8-2c22-43ce-9639-e998ecb4fedc) |
-| [matorus/replit-coder-prompt](https://huggingface.co/matorus/replit-coder-prompt)                     | 3B   | 24.7%   | 36.6%   | [eval.out](./results/replit_coder_prompt/eval.out) |
-| [matorus/replit-coder](https://huggingface.co/matorus/replit-coder)                                   | 3B   | 23.3%   | 35.4%   | [eval.out](./results/replit_coder/eval.out) |
-| [teknium/Replit-v2-CodeInstruct-3B](https://huggingface.co/teknium/Replit-v2-CodeInstruct-3B)         | 3B   | 21.5%   | 31%     | ![replit-codeinstruct-v2](https://github.com/abacaj/code-eval/assets/7272343/655aaa1d-0715-4fcd-b9ba-a22b5fddb215) |
-| [matorus/replit-leetcode-prompt](https://huggingface.co/matorus/replit-leetcode-prompt)               | 3B   | 21.2%   | 28.7%   | [eval.out](./results/replit_leetcode_prompt/eval.out) |
-| [matorus/replit-leetcode](https://huggingface.co/matorus/replit-leetcode)                             | 3B   | 20.1%   | 25%     | [eval.out](./results/replit_leetcode/eval.out) |
-| [replit-code-v1-3b](https://huggingface.co/replit/replit-code-v1-3b)                                  | 3B   | 17.1%   | 29.8%   | ![replit-code-v1](https://github.com/abacaj/code-eval/assets/7272343/6b387aa8-db60-4f04-b458-35b010b1145c)         |
-| [mpt-7b](https://huggingface.co/mosaicml/mpt-7b)                                                      | 7B   | 15.9%   | 23.7%   | ![mpt-7b](https://github.com/abacaj/code-eval/assets/7272343/16965905-a368-4254-aeab-5e44126eba84)                 |
-| [xgen-7b-8k-base](https://huggingface.co/Salesforce/xgen-7b-8k-base)                                  | 7B   | 14.9%   | 22.5%   | ![xgen-7b-8k-base](https://github.com/abacaj/code-eval/assets/7272343/995c84a9-ee69-43bf-8502-a74eba1d927a)        |
-| [mpt-30b](https://huggingface.co/mosaicml/mpt-30b)                                                    | 30B  | pending | pending | pending                                                                                                            |
+| model                                                                                                 | size | pass@1  | pass@10 | overlap | screenshot                                                                                                         |
+| ----------------------------------------------------------------------------------------------------- | ---- | ------- | ------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
+| [sahil2801/replit-code-instruct-glaive](https://huggingface.co/sahil2801/replit-code-instruct-glaive) | 3B   | 63.5%   | 67%     | 56.2% | ![instruct-glaive](https://github.com/abacaj/code-eval/assets/7272343/6fd7527d-0dc4-4b48-8a57-ad0373074bc5)        |
+| [WizardCoder-15B-V1.0](https://huggingface.co/WizardLM/WizardCoder-15B-V1.0)                          | 15B  | 57%     | 68.9%   | 4.9% | ![wizardcoder](https://github.com/abacaj/code-eval/assets/7272343/0b941ff8-b474-4236-bbc0-89d925bbd34e)            |
+| [bigcode/starcoder](https://huggingface.co/bigcode/starcoder)                                         | 15B  | 34.6%   | 48.7%   | | ![starcoder](https://github.com/abacaj/code-eval/assets/7272343/eb5df978-f56b-4557-a433-8b8fa863a059)              |
+| [matorus/replit-coder-v2](https://huggingface.co/matorus/replit-coder-v2)                             | 3B   | 28.7%   | 43.3%   | 6.7% | [eval.out](./results/replit_coder_v2/eval.out) |
+| [openchat/opencoderplus](https://huggingface.co/openchat/opencoderplus)                               | 15B  | 27.3%   | 43.9%   | | ![opencoder](https://github.com/abacaj/code-eval/assets/7272343/1fa9f5ef-941b-4ea8-981e-c3f258c03fee)              |
+| [teknium/Replit-v1-CodeInstruct-3B](https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B)         | 3B   | 25.8%   | 42.6%   | 4.9% | ![replit-codeinstruct-v1](https://github.com/abacaj/code-eval/assets/7272343/4fca98d8-2c22-43ce-9639-e998ecb4fedc) |
+| [matorus/replit-coder-prompt](https://huggingface.co/matorus/replit-coder-prompt)                     | 3B   | 24.7%   | 36.6%   | | [eval.out](./results/replit_coder_prompt/eval.out) |
+| [matorus/replit-coder](https://huggingface.co/matorus/replit-coder)                                   | 3B   | 23.3%   | 35.4%   | 4.9% | [eval.out](./results/replit_coder/eval.out) |
+| [teknium/Replit-v2-CodeInstruct-3B](https://huggingface.co/teknium/Replit-v2-CodeInstruct-3B)         | 3B   | 21.5%   | 31%     | | ![replit-codeinstruct-v2](https://github.com/abacaj/code-eval/assets/7272343/655aaa1d-0715-4fcd-b9ba-a22b5fddb215) |
+| [matorus/replit-leetcode-prompt](https://huggingface.co/matorus/replit-leetcode-prompt)               | 3B   | 21.2%   | 28.7%   | | [eval.out](./results/replit_leetcode_prompt/eval.out) |
+| [matorus/replit-leetcode](https://huggingface.co/matorus/replit-leetcode)                             | 3B   | 20.1%   | 25%     | | [eval.out](./results/replit_leetcode/eval.out) |
+| [replit-code-v1-3b](https://huggingface.co/replit/replit-code-v1-3b)                                  | 3B   | 17.1%   | 29.8%   | | ![replit-code-v1](https://github.com/abacaj/code-eval/assets/7272343/6b387aa8-db60-4f04-b458-35b010b1145c)         |
+| [mpt-7b](https://huggingface.co/mosaicml/mpt-7b)                                                      | 7B   | 15.9%   | 23.7%   | | ![mpt-7b](https://github.com/abacaj/code-eval/assets/7272343/16965905-a368-4254-aeab-5e44126eba84)                 |
+| [xgen-7b-8k-base](https://huggingface.co/Salesforce/xgen-7b-8k-base)                                  | 7B   | 14.9%   | 22.5%   | | ![xgen-7b-8k-base](https://github.com/abacaj/code-eval/assets/7272343/995c84a9-ee69-43bf-8502-a74eba1d927a)        |
+| [mpt-30b](https://huggingface.co/mosaicml/mpt-30b)                                                    | 30B  | pending | pending | pending | pending                                                                                                            |
 
 ## FAQ
 
