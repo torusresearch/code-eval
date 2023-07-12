@@ -5,6 +5,7 @@ from transformers import (
 )
 from tqdm import tqdm
 import itertools
+import os
 import typing
 
 BatchGenerator = typing.Callable[
@@ -40,9 +41,12 @@ def run_eval(
     generate_batch_completion: BatchGenerator,
     is_starcoder: bool = False,
 ):
+    # if file exists, raise exception
+    if os.path.exists(out_path):
+        raise Exception(f"File {out_path} already exists.")
+    
     problems = read_problems()
     # problems = dict(itertools.islice(problems.items(), 20))
-    samples = []
     pbar = tqdm(total=len(problems) * num_samples_per_task)
 
     for task_id in problems:
@@ -60,9 +64,7 @@ def run_eval(
                 task_id=task_id,
                 completion=sample,
             )
-
-            samples += [result]
+            write_jsonl(out_path, [result], append=True)
 
         pbar.update(num_samples_per_task)
 
-    write_jsonl(out_path, samples)
