@@ -7,6 +7,9 @@ This is a repo I use to run human-eval on code models, adjust as needed. Some sc
 ## Results
 
 Table is sorted by pass@1 score.
+
+Overlap is the overlap between test data and training data.
+Run `python validate.py` to obtain these values.
  
 | model                                                                                                 | size | pass@1  | pass@10 | overlap | screenshot                                                                                                         |
 | ----------------------------------------------------------------------------------------------------- | ---- | ------- | ------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
