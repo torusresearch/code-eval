@@ -160,3 +160,6 @@ cython_debug/
 #.idea/
 *.jsonl
 scratch.py
+
+# eval.out files (unless added manually)
+eval.out
