@@ -22,7 +22,15 @@ def count_contained(dataset, eval_results):
 
 models = [
     "replit_glaive",
+    "replit_coder",
+    "replit_coder_prompt_v1",
+    "replit_leetcode",
+    "replit_leetcode_prompt",
+    "replit_instruct",
+    "replit_instruct_v2",
     "replit",
+    "mpt",
+    "mpt_coder",
     "wizard",
 ]
 
