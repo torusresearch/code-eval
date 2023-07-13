@@ -41,15 +41,25 @@ def run_eval(
     generate_batch_completion: BatchGenerator,
     is_starcoder: bool = False,
 ):
-    # if file exists, raise exception
+    # resume previous evaluation, if any
+    complete = 0
     if os.path.exists(out_path):
-        raise Exception(f"File {out_path} already exists.")
+        with open(out_path, "r") as f:
+            lines = f.readlines()
+            complete = len(lines) // num_samples_per_task
     
     problems = read_problems()
     # problems = dict(itertools.islice(problems.items(), 20))
-    pbar = tqdm(total=len(problems) * num_samples_per_task)
+    
+    if complete >= len(problems):
+        raise ValueError("Already completed evaluation")
+    
+    pbar = tqdm(total=len(problems) * num_samples_per_task, initial=complete*num_samples_per_task)
 
-    for task_id in problems:
+    for i, task_id in enumerate(problems):
+        if i < complete:
+            continue
+        
         if is_starcoder:
             prompt = problems[task_id]["prompt"].replace("    ", "\t")
         else:
