@@ -20,13 +20,13 @@ Run `python validate.py` to obtain these values.
 | [openchat/opencoderplus](https://huggingface.co/openchat/opencoderplus)                               | 15B  | 27.3%   | 43.9%   | | ![opencoder](https://github.com/abacaj/code-eval/assets/7272343/1fa9f5ef-941b-4ea8-981e-c3f258c03fee)              |
 | [teknium/Replit-v1-CodeInstruct-3B](https://huggingface.co/teknium/Replit-v1-CodeInstruct-3B)         | 3B   | 25.8%   | 42.6%   | 4.9% | ![replit-codeinstruct-v1](https://github.com/abacaj/code-eval/assets/7272343/4fca98d8-2c22-43ce-9639-e998ecb4fedc) |
 | [matorus/replit-coder-prompt-v1](https://huggingface.co/matorus/replit-coder-prompt)                     | 3B   | 24.7%   | 36.6%   | 5.5% | [eval.out](./results/replit_coder_prompt_v1/eval.out) |
+| [mpt-30b](https://huggingface.co/mosaicml/mpt-30b)                                                    | 30B  | 24.3% | 37.8% | 4.9% | [eval.out](./results/mpt_large/eval.out) |
 | [teknium/Replit-v2-CodeInstruct-3B](https://huggingface.co/teknium/Replit-v2-CodeInstruct-3B)         | 3B   | 21.5%   | 31%     | 3.7% | ![replit-codeinstruct-v2](https://github.com/abacaj/code-eval/assets/7272343/655aaa1d-0715-4fcd-b9ba-a22b5fddb215) |
 | [matorus/replit-leetcode-prompt](https://huggingface.co/matorus/replit-leetcode-prompt)               | 3B   | 21.2%   | 28.7%   | 4.3% | [eval.out](./results/replit_leetcode_prompt/eval.out) |
 | [matorus/replit-leetcode](https://huggingface.co/matorus/replit-leetcode)                             | 3B   | 20.1%   | 25%     | 4.9% | [eval.out](./results/replit_leetcode/eval.out) |
 | [replit-code-v1-3b](https://huggingface.co/replit/replit-code-v1-3b)                                  | 3B   | 17.1%   | 29.8%   | 7.3% | ![replit-code-v1](https://github.com/abacaj/code-eval/assets/7272343/6b387aa8-db60-4f04-b458-35b010b1145c)         |
 | [mpt-7b](https://huggingface.co/mosaicml/mpt-7b)                                                      | 7B   | 15.9%   | 23.7%   | 4.9% | ![mpt-7b](https://github.com/abacaj/code-eval/assets/7272343/16965905-a368-4254-aeab-5e44126eba84)                 |
 | [xgen-7b-8k-base](https://huggingface.co/Salesforce/xgen-7b-8k-base)                                  | 7B   | 14.9%   | 22.5%   | | ![xgen-7b-8k-base](https://github.com/abacaj/code-eval/assets/7272343/995c84a9-ee69-43bf-8502-a74eba1d927a)        |
-| [mpt-30b](https://huggingface.co/mosaicml/mpt-30b)                                                    | 30B  | pending | pending | pending | pending                                                                                                            |
 
 ## FAQ
 

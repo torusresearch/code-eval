@@ -64,9 +64,8 @@ if __name__ == "__main__":
             use_auth_token=TOKEN,
             device_map="auto",
             max_memory={
-                0: "20GiB",
-                1: "20GiB",
-                2: "20GiB",
+                0: "30GiB",
+                1: "30GiB",
             },
         ).eval()
     )
